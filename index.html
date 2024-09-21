@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>青年立业评价体系</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="chart" style="width: 100%; height: 600px;"></div>
+    <script>
+        var chartDom = document.getElementById('chart');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            title: {
+                text: '青年立业评价体系',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
+            },
+            series: [
+                {
+                    name: '青年立业评价体系',
+                    type: 'pie',
+                    radius: '50%',
+                    data: [
+                        { value: 0.08, name: '一般公共服务支出占比（政策环境）' },
+                        { value: 0.08, name: '财政科技支出（政策环境）' },
+                        { value: 0.09, name: '地方教育公开支出（政策环境）' },
+                        { value: 0.1, name: '人均 GDP（市场）' },
+                        { value: 0.15, name: '职工平均工资（市场）' },
+                        { value: 0.07, name: '每万人本专科大学生数（市场）' },
+                        { value: 0.13, name: '每万人私营企业与个体就业人数（市场）' },
+                        { value: 0.1, name: '全社会 R&D 经费支出（创新创业）' },
+                        { value: 0.1, name: '每万人发明专利授予量（创新创业）' },
+                        { value: 0.1, name: '全市 R&D 人员数（创新创业）' }
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+</body>
+</html>
